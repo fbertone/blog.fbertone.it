@@ -1,4 +1,4 @@
-## Welcome to GitHub Pages
+## Welcome Blog
 
 You can use the [editor on GitHub](https://github.com/fbertone/blog.fbertone.it/edit/master/index.md) to maintain and preview the content for your website in Markdown files.
 
