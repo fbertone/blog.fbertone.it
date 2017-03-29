@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Hello World!"
-date: 2017-03-29
+date: 2017-03-29 00:00:00
 categories: test
 ---
 Hello There! 
