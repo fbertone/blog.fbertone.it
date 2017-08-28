@@ -44,8 +44,8 @@ const apiKey = '<YOUR_API_KEY>'
 const apiSecret = '<YOUR_API_SECRET>'
 const testnet = true
 
-const walletName = "mywallet"
-const walletPass = "mypass"
+const walletName = 'mywallet'
+const walletPass = 'mypass'
 ```
 
 apiKey and apiSecret are the tokens we received from blocktrail, while walletName and walletPass are the name and the password for our wallet. You can choose whatever you want. Note the constant testnet set to true to signalate that we want to use the testnet.
