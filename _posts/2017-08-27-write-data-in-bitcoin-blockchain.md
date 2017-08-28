@@ -20,4 +20,50 @@ To store custom data with OP_RETURN we need:
 * bitcoins to pay miner fees
 * data to store
 
+To keep things simple, we will not use an actual node of the network, instead we will relay on API from a third party service, for example [Blocktrail](https://www.blocktrail.com). To use the API we need (free) API keys. Register an account on blocktrail and request your keys. We will also use the nodejs SDK provided by them.
+
+Install the SDK running:
+```bash
+npm install blocktrail-sdk
+```
+
+Since bitcoins nowadays are worth big money, we will use the [testnet](https://en.bitcoin.it/wiki/Testnet) instead of the official blockchain.
+
+OK, let's start building our client.
+
+First of all, we have to import the SDK that we installed in previous step:
+
+```javascript
+const blocktrail = require('blocktrail-sdk')
+```
+
+Next we set some constant for later use, use your own values:
+
+```javascript
+const apiKey = '<YOUR_API_KEY>'
+const apiSecret = '<YOUR_API_SECRET>'
+const testnet = true
+
+const walletName = "mywallet"
+const walletPass = "mypass"
+```
+
+apiKey and apiSecret are the tokens we received from blocktrail, while walletName and walletPass are the name and the password for our wallet. You can choose whatever you want. Note the constant testnet set to true to signalate that we want to use the testnet.
+
+The next step is the creation of a client, instantiated with our API keys.
+
+```javascript
+const client = blocktrail.BlocktrailSDK({
+    apiKey : apiKey,
+    apiSecret : apiSecret,
+    testnet: testnet
+})
+```
+
+After that, we need to create a new wallet (or initialise an existing one). I will just create a new one to keep things short.
+
+```javascript
+client.createNewWallet(walletName, walletPass, cb)
+```
+
 TO BE CONTINUED
