@@ -66,4 +66,23 @@ After that, we need to create a new wallet (or initialise an existing one). I wi
 client.createNewWallet(walletName, walletPass, walletCB)
 ```
 
+Let's define walletCB this way:
+
+```javascript
+function walletCB(err, wallet, backupInfo) {
+    if (err) {
+      console.log(err) // maybe wallet already exists, try to initialize it
+      client.initWallet(walletName, walletPass, function(err, wallet) {
+        if (err) {
+          console.log(err)
+        } else {
+          getAddress(wallet)
+        }
+      })
+    } else {
+      getAddress(wallet)
+    }
+}
+```
+
 TO BE CONTINUED
