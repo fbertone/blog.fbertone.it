@@ -63,7 +63,7 @@ const client = blocktrail.BlocktrailSDK({
 After that, we need to create a new wallet (or initialise an existing one). I will just create a new one to keep things short.
 
 ```javascript
-client.createNewWallet(walletName, walletPass, cb)
+client.createNewWallet(walletName, walletPass, walletCB)
 ```
 
 TO BE CONTINUED
