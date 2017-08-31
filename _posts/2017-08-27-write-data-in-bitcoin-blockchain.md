@@ -99,4 +99,6 @@ function getAddress(wallet) {
 }
 ```
 
+Now we are ready to create a new transaction with our embedded data!
 
+(TO BE CONTINUED)
