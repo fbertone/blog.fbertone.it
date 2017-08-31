@@ -60,7 +60,7 @@ const client = blocktrail.BlocktrailSDK({
 })
 ```
 
-After that, we need to create a new wallet (or initialise an existing one). I will just create a new one to keep things short.
+After that, we need to create a new wallet (or initialise an existing one).
 
 ```javascript
 client.createNewWallet(walletName, walletPass, walletCB)
@@ -85,4 +85,18 @@ function walletCB(err, wallet, backupInfo) {
 }
 ```
 
-TO BE CONTINUED
+In getAddress we create a new address and initialize it with some coinsfrom the faucet:
+
+```javascript
+function getAddress(wallet) {
+  wallet.getNewAddress(function(err, address) {
+    if (err) {
+      console.log(err)
+    } else {
+      client.faucetWithdrawl(address, blocktrail.toSatoshi(0.001), faucetCB)
+    }
+  })
+}
+```
+
+
