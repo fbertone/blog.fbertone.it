@@ -127,5 +127,5 @@ function faucetCB(err, res) {
 
 And the result is: 
 
-> (aefc5c1eec6af8f33ec14d7432d2d47eb4e9017ab3114569e25939a8b1a71eb1)[https://www.blocktrail.com/tBTC/tx/aefc5c1eec6af8f33ec14d7432d2d47eb4e9017ab3114569e25939a8b1a71eb1#tx_messages]
+> [aefc5c1eec6af8f33ec14d7432d2d47eb4e9017ab3114569e25939a8b1a71eb1](https://www.blocktrail.com/tBTC/tx/aefc5c1eec6af8f33ec14d7432d2d47eb4e9017ab3114569e25939a8b1a71eb1#tx_messages])
 
