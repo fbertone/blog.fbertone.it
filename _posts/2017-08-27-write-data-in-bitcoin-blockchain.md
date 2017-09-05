@@ -46,6 +46,8 @@ const testnet = true
 
 const walletName = 'mywallet'
 const walletPass = 'mypass'
+let myWallet
+let myAddress
 ```
 
 apiKey and apiSecret are the tokens we received from blocktrail, while walletName and walletPass are the name and the password for our wallet. You can choose whatever you want. Note the constant testnet set to true to signalate that we want to use the testnet.
@@ -89,10 +91,12 @@ In getAddress we create a new address and initialize it with some coinsfrom the 
 
 ```javascript
 function getAddress(wallet) {
+  myWallet = wallet
   wallet.getNewAddress(function(err, address) {
     if (err) {
       console.log(err)
     } else {
+      myAddress = address
       client.faucetWithdrawl(address, blocktrail.toSatoshi(0.001), faucetCB)
     }
   })
@@ -101,4 +105,27 @@ function getAddress(wallet) {
 
 Now we are ready to create a new transaction with our embedded data!
 
-(TO BE CONTINUED)
+```javascript
+function faucetCB(err, res) {
+  if (err) {
+    console.log(err)
+  } else {
+    console.log(res)
+    let transaction = {}
+    transaction[myAddress] = blocktrail.toSatoshi(0.001)
+    transaction[blocktrail.Wallet.OP_RETURN] = 'https://blog.fbertone.it/2017/08/27/write-data-in-bitcoin-blockchain.html'
+
+    myWallet.pay(transaction, function(err, result) {
+      if (err) {
+        return console.log(err)
+      }
+      console.log('Transaction id: ' + result)
+    })
+  }
+}
+```
+
+And the result is: 
+
+> (aefc5c1eec6af8f33ec14d7432d2d47eb4e9017ab3114569e25939a8b1a71eb1)[https://www.blocktrail.com/tBTC/tx/aefc5c1eec6af8f33ec14d7432d2d47eb4e9017ab3114569e25939a8b1a71eb1#tx_messages]
+
