@@ -6,7 +6,7 @@ categories: []
 tags: [javascript, node, bitcoin, blockchain]
 ---
 
-# Write Data in Bitcoin Blockchain
+# Write Data in Bitcoin Blockchain #
 
 [Bitcoin](http://bitcoin.org) needs no introduction. It is known to be the first and most popular cryptocurrency based on the blockchain. However not everybody is aware that apart from financial transactions, it can be also used to store custom data in various ways. While this is somehow discouraged as it bloats the blockchain with information that goes outside its primary scope, apparently [Satoshi](https://en.bitcoin.it/wiki/Satoshi_Nakamoto) himself inserted some messages already in the [first blocks](https://bitcoinstrings.com/), followed shortly by the [first miners](https://bitcointalk.org/index.php?topic=38007.0). A **very** interesting review of some of the hidden messages found in the blockchain is [here](http://www.righto.com/2014/02/ascii-bernanke-wikileaks-photographs.html) (Also check [cryptograffiti](http://www.cryptograffiti.info/) and [doge yip](https://geo-gs.github.io/dogeyip/))
 
@@ -129,3 +129,6 @@ And the result is:
 
 > [aefc5c1eec6af8f33ec14d7432d2d47eb4e9017ab3114569e25939a8b1a71eb1](https://www.blocktrail.com/tBTC/tx/aefc5c1eec6af8f33ec14d7432d2d47eb4e9017ab3114569e25939a8b1a71eb1#tx_messages)
 
+## Conclusions ##
+
+Blockchain is a disruptive technology still in its early days (sort of). In this brief tutorial we have seen a simple trick to store a simple string inside the Bitcoin network. In next posts we will go further by storing files and retrieving them afterwards.
